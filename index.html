@@ -1,10 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-      <meta charset="UTF-8">
-      <title>fcc领域</title>
+	<meta charset="UTF-8">
+	<title>图片库</title>
+	<link rel="stylesheet" href="index.css">
+	<script src="jquery.js"></script>
+	<script src="index.js"></script>
+	<script>
+		(function($){
+	  $(document).on('mouseenter mouseleave','.picbox',function(e){
+            var $detail = $(this).find('.discripiton');
+            if(e.type == "mouseenter"){
+                $detail.fadeTo('fast',0.7);
+           }else if(e.type == "mouseleave"){
+                $detail.fadeOut('fast');
+          }   
+  });
+  })(jQuery);
+	</script>
 </head>
 <body>
-    <h3>fcc的个人首页</h3>
+<div id="container">
+    <div id="gallery">
+    <div class="picbox">
+    	<img src="pics/pic1.jpg" alt="" id="img1">
+    	<div class="discripiton">
+    		<div class="content">这是图片1</div>
+    		<div class="belong">Daker</div>
+    	</div>
+    </div>
+	<div class="picbox">
+    	<img src="pics/pic2.jpg" alt="">
+    	<div class="discripiton">
+    		<div class="content">这是图片2</div>
+    		<div class="belong">Daker</div>
+    	</div>
+    </div>
+    <div class="picbox">
+    	<img src="pics/pic3.jpg" alt="">
+    	<div class="discripiton">
+    		<div class="content">这是图片3</div>
+    		<div class="belong">Daker</div>
+    	</div>
+    </div>
+    <div class="picbox">
+    	<img src="pics/pic4.jpg" alt="">
+    	<div class="discripiton">
+    		<div class="content">这是图片4</div>
+    		<div class="belong">Daker</div>
+    	</div>
+    </div>
+    <div class="picbox">
+    	<img src="pics/pic5.jpg" alt="">
+    	<div class="discripiton">
+    		<div class="content">这是图片5</div>
+    		<div class="belong">Daker</div>
+    	</div>
+    </div>
+    <div class="picbox">
+    	<img src="pics/pic6.jpg" alt="">
+    	<div class="discripiton">
+    		<div class="content">这是图片6</div>
+    		<div class="belong">Daker</div>
+    	</div>
+    </div>
+    <div class="picbox">
+    	<img src="pics/pic7.jpg" alt="">
+    	<div class="discripiton">
+    		<div class="content">这是图片7</div>
+    		<div class="belong">Daker</div>
+    	</div>
+    </div>
+    <div class="picbox">
+    	<img src="pics/pic8.jpg" alt="">
+    	<div class="discripiton">
+    		<div class="content">这是图片8</div>
+    		<div class="belong">Daker</div>
+    	</div>
+    </div>
+    <div class="picbox">
+    	<img src="pics/pic9.jpg" alt="">
+    	<div class="discripiton">
+    		<div class="content">这是图片9</div>
+    		<div class="belong">Daker</div>
+    	</div>
+    </div>
+    </div>
+	
+    <div class="more">
+    	<a href="pages/1.html" id="more-pics">click for more</a>
+    </div>
+    
+</div>
+    
 </body>
 </html>
