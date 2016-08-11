@@ -1,2 +1,2 @@
 my branch sub1!
-this is sub1 modified
+this is sub2 modified
