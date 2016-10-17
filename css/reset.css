@@ -1,0 +1,18 @@
+body,ul{
+    padding:0;
+    margin:0; 
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+p,span,li,a,div{
+    font-size:18px;
+    font-family: 'Microsoft Yahei';
+    color:#000;
+    text-decoration:none;
+}
+ul li{
+    list-style: none;
+    color:#000;
+}
