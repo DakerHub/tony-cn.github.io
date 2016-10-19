@@ -44,16 +44,15 @@ p,span,li,a,div{color:#fff}
     width:100%;
 }
 .name_wrapper{
-    width:40%;
     margin:10px auto;
+    text-align: center;
 }
 .name_wrapper .iconfont{
     font-size:14px;
-    margin-left:20px;
 }
 .local{
-    width:70%;
     margin:10px auto;
+    text-align: center;
 }
 .local span{
     margin:0 10px;
@@ -78,7 +77,7 @@ p,span,li,a,div{color:#fff}
 }
 .contact{
     margin-top:40px;
-    text-align: right;
+    text-align: center;
 }
 .nav:after{
     content:"";
@@ -90,18 +89,17 @@ p,span,li,a,div{color:#fff}
 }
 .contact .github{
     font-size:26px;
-    float:left;
-    margin-left:10%;
 }
 .contact .github:hover{
     color:#e41637;
 }
 .contact .mail{
-    float:right;
+    display: inline-block;
+    margin-left: 10px;
 }
 .contact .email{
-    margin-right:40px;
     font-size:12px;
+    margin-left: -8px;
 }
 /*内容部分begin*/
 .container{
