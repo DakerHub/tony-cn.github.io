@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>fcc</title>
+    <link rel="icon" href="favicon.gif" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/nav.css">
 </head>
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="head_wrapper">
             <div class="mypic"><img src="img/fcc.jpg" title="fcc" alt="fcc" id="mypic"></div>
             <div class="info">
@@ -19,25 +20,31 @@
                     <i class="iconfont">&#xe652</i>
                     <span class="city">广州</span><span class="school">华南理工大学</span>
                 </div>
-                <nav class="nav">
+                <nav class="nav" id="nav">
                     <ul>
-                        <li class="currentView"><i class="iconfont">&#xf007d</i><a href="#">主页</a></li>
-                        <li><i class="iconfont">&#xe6a2</i><a href="#">文章</a></li>
-                        <li><i class="iconfont">&#xe837</i><a href="#">绘画集</a></li>
-                        <li><i class="iconfont">&#xe623</i><a href="#">静态DEMO</a></li>
-                        <li><i class="iconfont">&#xe632</i><a href="#">ABOUT</a></li>
+                        <li class="currentView home"><i class="iconfont">&#xf007d</i><a href="index.html">主页</a></li>
+                        <li class="link"><i class="iconfont">&#xe6a2</i><a href="articles/articles.html">文章</a></li>
+                        <li class="link"><i class="iconfont">&#xe837</i><a href="javascript:;">绘画集</a></li>
+                        <li class="link"><i class="iconfont">&#xe623</i><a href="javascript:;">静态DEMO</a></li>
+                        <li class="link"><i class="iconfont">&#xe632</i><a href="javascript:;">ABOUT</a></li>
                     </ul>
                 </nav>
                 <div class="contact">
                     <a href="https://github.com/tony-cn" title="github"><i class="iconfont github">&#xe735</i></a>
-                    <i class="iconfont">&#xe7bd</i>
-                    <span class="email">523246656@qq.com</span>
+                    <div class="mail">
+                        <i class="iconfont">&#xe7bd</i>
+                        <span class="email">523246656@qq.com</span>
+                    </div>
+                    
                 </div>
             </div>
         </div>
     </header>
-    <section class="container">
+    <section class="container" id="container">
         <iframe src="articles/recent.html" id="content"  frameborder="no"></iframe>
     </section>
+    <script data-main="js/index" src="js/require.js">
+        
+    </script>
 </body>
 </html>

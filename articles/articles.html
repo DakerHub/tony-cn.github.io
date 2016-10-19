@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章列表</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/preview.css">
+    <link rel="stylesheet" type="text/css" href="../css/articles.css">
+</head>
+<body>
+    <div class="main">
+        <div class="list">
+            <div class="articles" id="articles"></div>
+        </div>
+        <iframe src="" frameborder="no" id="content"></iframe>
+    </div>
+    <div class="sort">
+        <div class="sort_head">
+            <div id="sort_time" class="sort_title sort_time currentSort">日期</div>
+            <div id="sort_tag" class="sort_title sort_tag">标签</div>
+        </div>
+        <div class="sort_body" id="sort_body">
+            <div class="sort_time_body" id="sort_time_body">
+                <div class="order_wrapper">
+                    <input type="radio" name="order" class="upOrder">
+                    <span>升序</span>
+                    <input type="radio" name="order" class="downOrder">
+                    <span>降序</span>
+                </div>
+                
+                <div class="recent_wrapper">
+                    <input type="radio" name="recent" class="1Y">
+                    <span>最近一年</span>   
+                </div>
+                <div class="recent_wrapper">
+                    <input type="radio" name="recent" class="3M">
+                    <span>最近三个月</span>
+                </div>
+                <div class="recent_wrapper">
+                    <input type="radio" name="recent" class="1M">
+                    <span>最近一个月</span>
+                </div>
+                <div class="recent_wrapper">  
+                    <input type="radio" name="recent" class="1W">
+                    <span>最近一周</span>
+                </div>
+                
+            </div>
+            <div class="sort_tag_body" id="sort_tag_body">
+                
+            </div>
+        </div>
+        <div class="chase_wrapper">
+                    <button type="button" id="chase">Chase the wrold!</button>
+                    <button type="button" id="chaseAll">查看全部</button>
+        </div>
+    </div>
+    <script data-main="../js/article" src="../js/require.js">
+        
+    </script>
+</body>
+</html>

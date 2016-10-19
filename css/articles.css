@@ -1,0 +1,125 @@
+.main{
+    width:70%;
+    margin-left:5%;
+    border:thin solid #ccc;
+    margin-top:-1px;
+    min-height:100%;
+}
+.sort{
+    position:absolute;
+    right:10px;
+    top:10px;
+    width:22%;
+    height:400px;
+    border:thin solid #ccc;
+    border-radius: 10px;
+}
+#content{
+    display: none;
+}
+.sort_head{
+    position:relative;
+    height:10%;
+    margin-top:10px;
+    border-bottom:thin solid #ccc;
+}
+.sort_head div{
+    display: inline-block;
+    text-align:center;
+    margin-bottom:-1px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    line-height: 30px;
+    cursor:pointer;
+}
+.sort_head div:hover{
+    background-color: #ccc;
+    color:#fff;
+}
+.sort_body{
+    height:70%;
+    width:100%;
+    overflow:hidden;
+    position:relative;
+}
+.sort_time_body{
+    position:absolute;
+    left:0;
+    top:0;
+    width: 100%
+}
+.sort_tag_body{
+    position:absolute;
+    left:105%;
+    top:0;
+    height:100%;
+    width:100%;
+}
+.sort_time{
+    position:absolute;
+    bottom: 0;
+    left:5%;
+    width:30%;
+    height:30px;
+    /*border:thin solid #ccc;*/
+}
+.sort_tag{
+    border-collapse:collapse;
+    position:absolute;
+    bottom: 0;
+    left:35%;
+    width:30%;
+    height:30px;
+    /*border:thin solid #ccc;*/
+}
+.sort .currentSort{
+    background-color: #ccc;
+    color:#fff;
+}
+.sort-tag{
+    display: inline-block;
+    border-radius:5px 2px;
+    padding:2px;
+    margin:5px;
+    cursor:pointer;
+}
+.sort-tag:hover span{
+    color: #e41637;
+}
+.sort-tag:hover i{
+    color: #e41637;
+}
+.sort-tag-active i,.sort-tag-active span{
+    color: #e41637;
+}
+.order_wrapper{
+    width:80%;
+    margin:10px 10%;
+}
+.order_wrapper:after{
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1px;
+    margin: 18px 0;
+    background-color: #ccc;
+}
+.recent_wrapper{
+    width:80%;
+    margin:10px 10%;
+    
+}
+
+.chase_wrapper{
+    width:100%;
+    height:10%;
+    text-align: center;
+}
+.chase_wrapper:before{
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1px;
+    margin: 12px 0;
+    background-color: #ccc;
+}

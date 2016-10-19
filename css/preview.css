@@ -1,0 +1,55 @@
+.iconfont{
+    color:#666;
+}
+.article{
+    border: thin solid #ccc;
+    border-radius: 10px;
+    width:80%;
+    margin:20px auto;
+    padding-bottom:10px;
+}
+.article:hover{
+    background-color: #efefef;
+}
+.article:hover .link a{
+    color:#e41637;
+}
+.title_wrapper{
+    width:100%;
+}
+.title{
+    padding-left:5%;
+}
+
+.crossline{
+    height:1px;
+    background-color: #ccc;
+    width:90%;
+    margin: 5px 5%;
+}
+.sketch{
+    width:90%;
+    padding-left: 5%;
+}
+.tag_wrapper,.tags_wrapper,.time_wrapper,.link{
+    display: inline-block;
+}
+.time_wrapper{
+    margin-left:5%;
+}
+.tags_wrapper{
+    margin-left:5%;
+}
+.tag_wrapper{
+    margin:0 5px;
+}
+.link{
+    float:right;
+    margin-right:5%;
+}
+.clearfloat{
+    clear: both;
+}
+.link:hover{
+    text-decoration: underline;
+}
