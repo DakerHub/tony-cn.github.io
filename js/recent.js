@@ -11,9 +11,10 @@ $(document).ready(function(){
         detail.methods.composeArticle(articles,item.title,item.sketch,item.time,item.src,item.tags);
     });*/
     $('.toArticle').click(function(e){
+        var $this = $(this);
         e.preventDefault();
         var ahref = e.target.href;
-        location.href = '../articles/articles.html?'+'href='+ahref;
+        location.href = encodeURI('../articles/articles.html?'+'href='+ahref+'&title='+$this.text());
         $('#home',window.parent.document).removeClass('currentView');
         $('#articles',window.parent.document).addClass('currentView');
         $('#header',window.parent.document).css({'width':'20%',transition:'width .5s'});

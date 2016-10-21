@@ -3,10 +3,13 @@ $(document).ready(function(){
     // 初始化页面
     var search = location.search;
     if(search){
-        var src = search.substring(search.indexOf('=')+1);
+        search = decodeURI(search);
+        var tempArr = search.split('&');
+        var src = tempArr[0].substring(tempArr[0].indexOf('=')+1);
         $('#content').attr({src:src});
         $('#contentWrapper').css({display:'block'}).addClass('show').removeClass('hidden');
         $('#goBack').css({display:'inline-block'});
+        $('#contentTitle').css({display:'block'}).find('h2').text(tempArr[1].substring(tempArr[1].indexOf('=')+1));
         $('#list').css({display:'none'}).addClass('hidden').removeClass('show');
     }
     var $articles = $('#articles');
@@ -69,6 +72,7 @@ $(document).ready(function(){
         }
         if($('#list').hasClass('hidden')){
             $('#contentWrapper').css({display:'none'});
+            $('#contentTitle').css({display:'none'});
             $('#list').css({display:'block'});
         }
         if($order.next().text()){
@@ -102,20 +106,24 @@ $(document).ready(function(){
         })
         if($('#list').hasClass('hidden')){
             $('#contentWrapper').css({display:'none'});
+            $('#contentTitle').css({display:'none'});
             $('#list').css({display:'block'});
         }
     })
     //文章链接的渐进增强
     $(document).on('click','.toArticle',function(e){
+        var $this = $(this);
         e.preventDefault();
         var src = e.target.href;
         $('#content').attr({src:src});
         $('#contentWrapper').css({display:'block'}).addClass('show').removeClass('hidden');
         $('#goBack').css({display:'inline-block'});
+        $('#contentTitle').css({display:'block'}).find('h2').text($this.text());
         $('#list').css({display:'none'}).addClass('hidden').removeClass('show');
     });
     $('#goBack').click(function(e){
         $(this).css({display:'none'});
+        $('#contentTitle').css({display:'none'});
         $('#contentWrapper').css({display:'none'}).addClass('hidden').removeClass('show')
         $('#list').css({display:'block'}).addClass('show').removeClass('hidden');
         document.getElementById("content").height = 0;
