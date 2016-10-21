@@ -14,7 +14,6 @@ $(document).ready(function(){
         e.preventDefault();
         var ahref = e.target.href;
         location.href = '../articles/articles.html?'+'href='+ahref;
-        console.log($('#header',window.parent.document));
         $('#home',window.parent.document).removeClass('currentView');
         $('#articles',window.parent.document).addClass('currentView');
         $('#header',window.parent.document).css({'width':'20%',transition:'width .5s'});

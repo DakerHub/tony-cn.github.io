@@ -1,39 +1,39 @@
-<!DOCTYPE html>                <html lang="en">                <head>                <meta charset="UTF-8">                <title>设计模式读书笔记.md</title>                <link rel="stylesheet" type="text/css" href="../../../../css/md.css">                </head>                <body><h4>基本概念</h4>
-<hr>
-<blockquote>
-<p>1.模式特点：<br>
-1). 是经过验证的；<br>
-2). 提供了通用的解决方案，并没有和某种特定的问题挂钩；<br>
-3). 使用模式为我们节省了时间；</p>
-</blockquote>
-<blockquote>
-<p>2.反模式：<br>
-描述了一种针对某个特定问题的不良解决方案，以及描述如何摆脱前述的情况以及如何创造更好的解决方案。<br>
-*反模式就像错题本一样，而设计模式就像一种解题思路。</p>
-</blockquote>
-<blockquote>
-<p>3.设计模式类别：<br>
-1). 创建型设计模式：专注于处理对象创建机制。包括：<br>
-Constructor(构造器)、Factory(工厂)、Abstract(抽象)、Prototype(原型)、Singleton(单例)、Builder(生成器)<br>
-2). 结构型设计模式：在不同对象之间建立关系的方法。包括：<br>
-Decorator(装饰者)、Facade(外观)、Flyweight(享元)、Adapter(适配器)、Proxy(代理)<br>
-3). 行为设计模式：专注于改善不同对象之间的通信。包括：<br>
-Iterator(迭代器)、Mediator(中介者)、Observer(观察者)、Visitor(访问者)</p>
-</blockquote>
-<blockquote>
-<p>4.Constructor模式：<br>
-1). js中没有类，在java中，构造器是用来初始化新建对象一个的函数。而js中直接用构造器初始化对象。
-2). 由于每个对象都会执行一边构造方法，因此公有方法不应该放在constructor中，应该定义在对象的原型protrotype中。
-3). 原型要访问传入的参数时，应该在constructor中将参数绑定在this对象上，然后再prototype中通过this调用。</p>
-</blockquote>
-<blockquote>
-<p>5.Module模式：<br>
-1). 原理是用作用域隔开各个代码块。在对象中定义属性以及方法，需要加上对象名才能访问，这样能防止变量名污染。<br>
-2). 通过Module模式，可以模仿类似私有变量的作用域。其原理主要用到了闭包。<br>
-3). 这样做还有一个好处，私有变量只需要声明一次就会一直存在在闭包中。
-4). 模块的基本形式：一个定义了私有变量和函数的函数；利用闭包创建可以访问私有变量和函数的特权函数；最后返回这个特权函数，或者把他保存到一个可以访问到的地方。</p>
-</blockquote>
-<pre><code>//私有变量、公共变量、公共函数
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>设计模式读书笔记.md</title>
+    <link rel="stylesheet" type="text/css" href="../../../../css/md.css"> 
+	<link rel="stylesheet" type="text/css" href="../../../../css/prism.css"> 
+    
+    </head>
+
+<body>
+	<h4>基本概念</h4>
+	<hr>
+	<blockquote>
+		<p>1.模式特点：<br> 1). 是经过验证的；<br> 2). 提供了通用的解决方案，并没有和某种特定的问题挂钩；<br> 3). 使用模式为我们节省了时间；</p>
+	</blockquote>
+	<blockquote>
+		<p>2.反模式：<br> 描述了一种针对某个特定问题的不良解决方案，以及描述如何摆脱前述的情况以及如何创造更好的解决方案。
+			<br> *反模式就像错题本一样，而设计模式就像一种解题思路。
+		</p>
+	</blockquote>
+	<blockquote>
+		<p>3.设计模式类别：<br> 1). 创建型设计模式：专注于处理对象创建机制。包括：<br> Constructor(构造器)、Factory(工厂)、Abstract(抽象)、Prototype(原型)、Singleton(单例)、Builder(生成器)
+			<br> 2). 结构型设计模式：在不同对象之间建立关系的方法。包括：<br> Decorator(装饰者)、Facade(外观)、Flyweight(享元)、Adapter(适配器)、Proxy(代理)
+			<br> 3). 行为设计模式：专注于改善不同对象之间的通信。包括：<br> Iterator(迭代器)、Mediator(中介者)、Observer(观察者)、Visitor(访问者)
+		</p>
+	</blockquote>
+	<blockquote>
+		<p>4.Constructor模式：<br> 1). js中没有类，在java中，构造器是用来初始化新建对象一个的函数。而js中直接用构造器初始化对象。 2). 由于每个对象都会执行一边构造方法，因此公有方法不应该放在constructor中，应该定义在对象的原型protrotype中。
+			3). 原型要访问传入的参数时，应该在constructor中将参数绑定在this对象上，然后再prototype中通过this调用。</p>
+	</blockquote>
+	<blockquote>
+		<p>5.Module模式：<br> 1). 原理是用作用域隔开各个代码块。在对象中定义属性以及方法，需要加上对象名才能访问，这样能防止变量名污染。<br> 2). 通过Module模式，可以模仿类似私有变量的作用域。其原理主要用到了闭包。<br>			3). 这样做还有一个好处，私有变量只需要声明一次就会一直存在在闭包中。 4). 模块的基本形式：一个定义了私有变量和函数的函数；利用闭包创建可以访问私有变量和函数的特权函数；最后返回这个特权函数，或者把他保存到一个可以访问到的地方。</p>
+	</blockquote>
+	<pre><code>//私有变量、公共变量、公共函数
 var module = (function(){
     var privateVar = 'pv';
     return {
@@ -61,11 +61,10 @@ console.log('新设置的pv:'+module.getVar());
 并且可以访问共有变量：pbv 
 新设置的pv:fcc       
 </code></pre>
-<blockquote>
-<p>6.Singleton模式：<br>
-1). 当只需要创建一个对象实例时。</p>
-</blockquote>
-<pre><code>var Singleton = (function(){
+	<blockquote>
+		<p>6.Singleton模式：<br> 1). 当只需要创建一个对象实例时。</p>
+	</blockquote>
+	<pre><code>var Singleton = (function(){
     var instance;
     function init(){
         var privateVar = 'pv';
@@ -95,4 +94,15 @@ var obj = Singleton.getInstance();
 var obj2 = Singleton.getInstance();
 console.log(obj == obj2);
 </code></pre>
-</body></html>
+<script>
+    var codes = document.getElementsByTagName('code');
+    for(let i=0;i<codes.length;i++){
+        codes[i].className += ' language-javascript';
+    }
+</script>
+<script src="../../../../js/prism.js">
+    
+</script>
+</body>
+
+</html>

@@ -10,14 +10,19 @@
 <body>
     <div class="main">
         <div class="contentTop">
-            <button type="button" id="goBack">返回</button>
+            <div class="goback-wrapper">
+                <button type="button" id="goBack">返回</button>
+            </div>
+            <div class="tag-list-wrapper" id="tag-list-wrapper">
+                <div class="tag-list"><i class="iconfont">&#xe751</i><span>全部</span></div>
+            </div>
             <div class="br100"></div>
         </div>
         <div class="contentBottom">
-            <div class="list" id="list">
+            <div class="list show" id="list">
                 <div class="articles" id="articles"></div>
             </div>
-            <div class="content" id="contentWrapper">
+            <div class="content hidden" id="contentWrapper">
                 <script type="text/javascript">
                     function iFrameHeight() {
                         try{

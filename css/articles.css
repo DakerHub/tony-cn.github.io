@@ -27,8 +27,25 @@
 .contentTop button{
     margin:5px;
 }
+.tag-list-wrapper{
+    display: inline-block;
+    overflow: hidden;
+}
+.tag-list{    margin: 6px;
+    display: inline-block;
+    padding: 2px 5px;
+    color: #fff;
+    border-radius: 5px;
+}
+.tag-list i,.tag-list span{
+    color:#e41637;
+    font-size: 16px;
+}
 #goBack{
     display: none;
+}
+.goback-wrapper{
+    float: left;
 }
 #content{
     min-height:80%;

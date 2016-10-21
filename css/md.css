@@ -7,7 +7,10 @@ html { font-size: 100%; overflow: hidden; -webkit-text-size-adjust: 100%; -ms-te
 	font-size: 1em;
 	line-height: 1.5;
 }
-
+/*初始化*/
+a,p,div,i,span,h1,h2,h3,h4,h5,h6,pre,code{
+	font-family: -apple-system, "Helvetica Neue", Arial, "PingFang SC", "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
 /*
  * 目录
  */
@@ -74,7 +77,12 @@ html { font-size: 100%; overflow: hidden; -webkit-text-size-adjust: 100%; -ms-te
 	padding: .2em 1em;
 	border-bottom: 2px solid #f8f8f8;
 }
-
+h4,h5,h6{
+	font-size:1em;
+}
+h6{
+	color:rgba(10,10,10,.6);
+}
 /*
  * 链接
  */
@@ -100,14 +108,14 @@ html { font-size: 100%; overflow: hidden; -webkit-text-size-adjust: 100%; -ms-te
 	font-family: monospace;
 }
  pre{
-	border: thin solid #EEE;
-	border: thin solid rgba(0,0,0,.1);
-	background-color: #f5f2f0;
-	padding: 1em;
+	background-color: #2a2a2a;
+	color:rgba(42,42,42,1);
+    padding: 1em;
+    border-radius: 5px;
+	overflow: auto;
 }
  pre code{
-    overflow: auto;
-    font-family: monospace;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 /*

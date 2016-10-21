@@ -1,11 +1,23 @@
-<!DOCTYPE html>                <html lang="en">                <head>                <meta charset="UTF-8">                <title>vue2.md</title>                <link rel="stylesheet" type="text/css" href="../../../../css/md.css">                </head>                <body><h5>8.组件：</h5>
-<pre><code>1.注册组件：
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>vue2.md</title>
+	<link rel="stylesheet" type="text/css" href="../../../../css/md.css"> 
+    <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+    </head>
+    	 
+
+<body>
+	<h5>8.组件：</h5>
+	<pre><code>1.注册组件：
     1). 扩展：var fcc = Vue.extend({template:&quot;&lt;span&gt;fcc&lt;/span&gt;&quot;})
     2).注册：Vue.component('my-fcc',fcc)
     3).实例：new Vue();
     4).使用：在html中插入&lt;my-fcc&gt;&lt;/my-fcc&gt;，会将注册的组件替换到当前位置，即渲染后：&lt;span&gt;fcc&lt;/span&gt;
 </code></pre>
-<pre><code>2.局部注册：
+	<pre><code>2.局部注册：
     在组件内注册其他组件称为局部注册，局部注册的组件只能在父组件中使用；
     var child = Vue.extend(...)//子组件扩展
     var parent = Vue.extend({
@@ -15,17 +27,17 @@
         }
     })
 </code></pre>
-<pre><code>3.语法糖：
+	<pre><code>3.语法糖：
     注册组件1,2步可以合为：
     Vue.component('my-fcc',{template:&quot;&lt;span&gt;fcc&lt;/span&gt;&quot;})
 </code></pre>
-<pre><code>4.组件选项问题：
+	<pre><code>4.组件选项问题：
     el，data的值必须是函数，函数中返回才是他们的最终值。
 </code></pre>
-<pre><code>5.模板解析问题：
+	<pre><code>5.模板解析问题：
     由于某些标签内部只允许存在特定的标签，因此在使用组件自定义的标签时，就会出现问题。这时候使用is特性。
 </code></pre>
-<pre><code>6.组件之间使用props传递数据：
+	<pre><code>6.组件之间使用props传递数据：
     在注册组件时，组件之间约定一个属性名：
     Vue.component({
         props : ['message','name']
@@ -33,4 +45,11 @@
     然后再父组件中使用该属性进行传值。
     &lt;child message=&quot;hello&quot; name=&quot;fcc&quot;&gt;&lt;/child&gt;
 </code></pre>
+	<script>
+    var codes = document.getElementsByTagName('code');
+    for(let i=0;i<codes.length;i++){
+        codes[i].className += ' language-javascript';
+    }
+</script>
+	<script src="../../../../js/prism.js">
 </body></html>
