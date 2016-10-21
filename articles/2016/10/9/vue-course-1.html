@@ -1,0 +1,166 @@
+<!DOCTYPE html>                <html lang="en">                <head>                <meta charset="UTF-8">                <title>vue1.md</title>                <link rel="stylesheet" type="text/css" href="../../../../css/md.css">                </head>                <body><h2>数据绑定</h2>
+<h6>1.插值：</h6>
+<pre><code>1.文本：使用双大括号  
+    &lt;p&gt; {{msg}} &lt;/p&gt;  
+</code></pre>
+<pre><code>2.单次插值：加'*'
+    &lt;p&gt;{{*msg}}&lt;/p&gt;
+</code></pre>
+<pre><code>3.插入html:
+    &lt;p&gt;{{{htmlstr}}}&lt;/p&gt;
+</code></pre>
+<pre><code>4.插入js单句代码：
+    &lt;p&gt;1 + 2 = {{1+2}}&lt;/p&gt;
+</code></pre>
+<pre><code>5.插入过滤器：
+
+</code></pre>
+<h6>2.指令：</h6>
+<blockquote>
+<p>指令 (Directives) 是特殊的带有前缀 v- 的特性。<br>
+指令的职责就是当其表达式的值改变时把某些特殊的行为应用到 DOM 上。</p>
+</blockquote>
+<pre><code>1.参数
+指令将元素的 href 特性跟表达式 url 的值绑定。
+&lt;a v-bind:href=&quot;url&quot;&gt;&lt;/a&gt;
+
+指令的参数放在冒号后面：
+v-on:click=&quot;doSomething&quot;
+</code></pre>
+<pre><code>2.修饰符：用于表示指令应当以特殊方式绑定。
+v-bind:href.literal=&quot;asda&quot;
+表示参数的值按照字符串解析，而不是表达式
+</code></pre>
+<pre><code>3.缩写：
+v-bind:href=&quot;url&quot; 缩写为  :href=&quot;url&quot;
+v-on:click=&quot;ds&quot; 缩写为    @click=&quot;ds&quot;
+</code></pre>
+<h6>3.计算属性：</h6>
+<blockquote>
+<p>在模板中如果需要多于一个表达式的逻辑，应当使用计算属性。</p>
+</blockquote>
+<blockquote>
+<p>计算属性得到的值会被缓存起来，如果数据需要每次得到最新值，使用methods返回值替代计算属性更好。</p>
+</blockquote>
+<pre><code>1.作为vue参数传入：(必须使用vm.attrName设置数据才会触发setter，如果是通过data设置不会触发，我也不知道为什么)
+var data = {attrName:'value'}
+var vm = new Vue({
+   data : data,
+   computed:{
+       attrName:{
+           get:function(){},
+           set:function(){}
+       }
+   }
+})
+</code></pre>
+<pre><code>
+2.使用vm.$watch观察
+var vm = new Vue({});
+vm.$watch('attrName',function(val){})
+</code></pre>
+<h6>4.class和style绑定:</h6>
+<pre><code>1.绑定class:
+  1).对象法：
+      &lt;span v-bind:class=&quot;{'class-a':isA,'class-b':isB}&quot; class=&quot;a-span&quot;&gt;&lt;/span&gt;
+      data = {isA:true,isB:false}
+  result:
+      &lt;span class=&quot;class-a a-span&quot;&gt;&lt;/span&gt;
+  或者：
+      &lt;span :class=&quot;classObj&quot;&gt;&lt;/span&gt;
+      data = {classObj:{classA:true,classB:false}}
+      
+  2).数组法：
+      &lt;span :class=&quot;[classA,classObj]&quot;&gt;&lt;/span&gt;
+      data =  {classA:'class-a',classObj:{'class-b':true,'class-c':false}}
+</code></pre>
+<pre><code>2.绑定style:
+  1).对象法：类上
+  2).数组法: 类上
+  3).自动厂商前缀
+</code></pre>
+<h6>5.条件渲染：</h6>
+<pre><code>1.v-if:
+    &lt;div v-if=&quot;yes&quot;&gt;true&lt;/div&gt;
+    &lt;div v-else&gt;false&lt;/div&gt;
+    data = {yes:true}
+</code></pre>
+<pre><code>2.template v-if:
+    &lt;template v-if=&quot;yes2&quot;&gt;
+        &lt;h1&gt;temp if&lt;/h1&gt;
+        &lt;p&gt;p1------------&lt;/p&gt;
+        &lt;p&gt;p2------------&lt;/p&gt;
+    &lt;/template&gt;
+// template不会被渲染进页面
+</code></pre>
+<pre><code>3.v-show:
+  1).v-show不支持template
+  2).v-show在组件上不支持后面接v-else；可用另一个v-show代替；
+  3).v-show不会删除页面元素，只是隐藏与显示
+</code></pre>
+<h6>6.列表渲染：</h6>
+<pre><code>1.v-for:
+    &lt;ul&gt;
+        &lt;li v-for=&quot;(index,item) in items&quot;&gt;{{item.text}}--{{index}}&lt;/li&gt;
+    &lt;/ul&gt;
+    ///使用v-for相当于for(var item in items){}会枚举出data.items中的每一项，循环渲染模板；
+</code></pre>
+<pre><code>2.template v-for:
+&lt;template v-for=&quot;item in items&quot;&gt;
+    &lt;li&gt;{{item.text}}&lt;/li&gt;
+    &lt;p&gt;fcc&lt;/p&gt;
+&lt;template&gt;
+</code></pre>
+<pre><code>3.数组方法，变异数组类似push,shift会改变元数组的方法，可以直接将修改的数据进行渲染，但是替换数组方法会创建新的数组，类似concat,filter等，需要将新数组覆盖掉原数组。
+</code></pre>
+<pre><code>4.track-by:
+当数组发生变化时，设置track-by参数会让重复的元素可以复用以提高效率。
+</code></pre>
+<pre><code>5.使用data.items[2] = val;赋值时不会触发视图更新，这时需要用data.items.$set(key,val)来代替这种赋值方法，以触发视图更新
+data.items.$remove(ind);删除某个值；变异方法
+
+6.如果items是一个对象，那么还可以访问$key属性
+&lt;div v-for=&quot;(key,val) in items&quot;&gt;{{key}}:{{val}}&lt;/div&gt;
+</code></pre>
+<pre><code>7.v-for 一个整数：
+&lt;div v-for=&quot;n in 10&quot;&gt;{{n}}&lt;/div&gt;
+</code></pre>
+<pre><code>8.使用过滤器：
+filterBy;
+orderBy;
+</code></pre>
+<h6>7.事件处理器 ：</h6>
+<pre><code>1.v-on
+    &lt;div v-on:click=&quot;handle&quot;&gt;click me&lt;/div&gt;
+    methods : {handle:function(e){//doSomething}}
+</code></pre>
+<pre><code>2.事件内联处理：
+    &lt;div @click=&quot;handle(args,$event)&quot;&gt;click&lt;/div&gt;
+    methods:{handle:function(args,e){}}
+    //事件对象通过$event传递。
+</code></pre>
+<pre><code>3.事件修饰符：
+    事件对象的两个常用方法:
+    event.preventDefault() =&gt;作为修饰符v-on:click.prevent
+    event.stopPropagation()   =&gt;作为修饰符v-on:click.stop
+    另外两个修饰符：
+    .self //只在当前元素被触发
+    .capture //使用capture模式
+</code></pre>
+<pre><code>4.按键修饰符：
+    快捷的按键码表示：
+    v-on.keyup.enter //输入enter时触发
+    enter
+    tab
+    delete
+    esc
+    space
+    up
+    down
+    left
+    right
+    单个字母，
+    自定义按键名：
+    Vue.directive('on').keyCodes.f1 = 112 //使用为 @keyup.f1
+</code></pre>
+</body></html>

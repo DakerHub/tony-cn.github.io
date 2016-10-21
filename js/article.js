@@ -1,6 +1,14 @@
 require(['detail','jquery'], function(detail,$){  
 $(document).ready(function(){
     // 初始化页面
+    var search = location.search;
+    if(search){
+        var src = search.substring(search.indexOf('=')+1);
+        $('#content').attr({src:src});
+        $('#contentWrapper').css({display:'block'});
+        $('#goBack').css({display:'block'});
+        $('#list').css({display:'none'});
+    }
     var $articles = $('#articles');
     var atcArr = detail.articles;
     var $tag_wrapper = $('#sort_tag_body');
@@ -32,6 +40,7 @@ $(document).ready(function(){
     $('.sort_tag_body').on('click','.sort-tag',function(){
         $(this).toggleClass('sort-tag-active');
     });
+    //绑定分类逻辑
     $('#chase').click(function(){
         var sortBody = $('#sort_body');
         sortObj.order = sortBody.find('[name="order"]:checked').attr('class');
@@ -62,6 +71,20 @@ $(document).ready(function(){
         $.each(atcArr,function(index,item){
             detail.methods.composeArticle($articles,item.title,item.sketch,item.time,item.src,item.tags);
         })
+    })
+    //文章链接的渐进增强
+    $('.toArticle').click(function(e){
+        e.preventDefault();
+        var src = e.target.href;
+        $('#content').attr({src:src});
+        $('#contentWrapper').css({display:'block'});
+        $('#goBack').css({display:'block'});
+        $('#list').css({display:'none'});
+    });
+    $('#goBack').click(function(e){
+        $('#contentWrapper').css({display:'none'})
+        $('#list').css({display:'block'});
+        document.getElementById("content").height = 0;
     })
 })
 });

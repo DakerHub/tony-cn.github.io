@@ -1,3 +1,9 @@
+a,h1,h2,h3,h4,h5,h6,div,span,p,i{
+    color:#676767;
+}
+a:hover{
+    color:#333;
+}
 .iconfont{
     color:#666;
 }
@@ -8,9 +14,9 @@
     margin:20px auto;
     padding-bottom:10px;
 }
-.article:hover{
+/*.article:hover{
     background-color: #efefef;
-}
+}*/
 .article:hover .link a{
     color:#e41637;
 }

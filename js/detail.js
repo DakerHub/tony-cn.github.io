@@ -1,75 +1,41 @@
+/*
+{
+                        title:"",
+                        sketch:"",
+                        time:"",
+                        tags:[],
+                        src:"../articles/"
+                    }
+*/                     
 define(function(){
     return {
-        articles : [
-                    {
-                        title:"这是一个标题",
-                        sketch:"这里有一些简述,具体是什么：撒发顺丰和看杀害发空间和防守反击看风景爱好饭卡上会计法巴克斯把卡讲课费安康办发快爆发啊数据库地方",
-                        time:"2015/9/17",
-                        tags:["前端","技术"],
-                        src:"../articles/2016/10/17/article1.html"
+        articles : [{
+                        title:"Vue官网教程学习-2",
+                        sketch:"vue是一个github开源的JS框架，作为一个轻量级的MVVM框架，上手容易，学习周期不长。",
+                        time:"2016/10/10",
+                        tags:["前端","技术","vue"],
+                        src:"../articles/2016/10/10/vue-course-2.html"
                     },
                     {
-                        title:"这是一个标题2",
-                        sketch:"这里有一些简述,具体是什么：撒发顺丰和看杀害发空间和防守反击看风景爱好饭卡上会计法巴克斯把卡讲课费安康办发快爆发啊数据库地方",
-                        time:"2013/10/18",
-                        tags:["前端","技术","github"],
-                        src:"../articles/2016/10/18/article1.html"
+                        title:"Vue官网教程学习-1",
+                        sketch:"vue是一个github开源的JS框架，作为一个轻量级的MVVM框架，上手容易，学习周期不长。",
+                        time:"2016/10/9",
+                        tags:["前端","技术","vue"],
+                        src:"../articles/2016/10/9/vue-course-1.html"
                     },
                     {
-                        title:"这是一个标题21",
-                        sketch:"这里有一些简述,具体是什么：撒发顺丰和看杀害发空间和防守反击看风景爱好饭卡上会计法巴克斯把卡讲课费安康办发快爆发啊数据库地方",
-                        time:"2016/10/18",
-                        tags:["nodeJS","技术","github"],
-                        src:"../articles/2016/10/18/article2.html"
-                    },
-                    {
-                        title:"这是一个标题41",
-                        sketch:"这里有一些简述,具体是什么：撒发顺丰和看杀害发空间和防守反击看风景爱好饭卡上会计法巴克斯把卡讲课费安康办发快爆发啊数据库地方",
-                        time:"2016/9/18",
-                        tags:["前端","技术","github"],
-                        src:"../articles/2016/10/18/article3.html"
-                    },
-                    {
-                        title:"这是一个标题42",
-                        sketch:"这里有一些简述,具体是什么：撒发顺丰和看杀害发空间和防守反击看风景爱好饭卡上会计法巴克斯把卡讲课费安康办发快爆发啊数据库地方",
-                        time:"2016/1/18",
-                        tags:["github"],
-                        src:"../articles/2016/10/18/article3.html"
-                    },
-                    {
-                        title:"这是一个标题43",
-                        sketch:"这里有一些简述,具体是什么：撒发顺丰和看杀害发空间和防守反击看风景爱好饭卡上会计法巴克斯把卡讲课费安康办发快爆发啊数据库地方",
-                        time:"2016/5/18",
-                        tags:["前端","vue"],
-                        src:"../articles/2016/10/18/article3.html"
-                    },
-                    {
-                        title:"这是一个标题44",
-                        sketch:"这里有一些简述,具体是什么：撒发顺丰和看杀害发空间和防守反击看风景爱好饭卡上会计法巴克斯把卡讲课费安康办发快爆发啊数据库地方",
-                        time:"2016/10/19",
-                        tags:["vue","技术"],
-                        src:"../articles/2016/10/18/article3.html"
-                    }
-                    ,{
-                        title:"这是一个标题45",
-                        sketch:"这里有一些简述,具体是什么：撒发顺丰和看杀害发空间和防守反击看风景爱好饭卡上会计法巴克斯把卡讲课费安康办发快爆发啊数据库地方",
-                        time:"2016/9/18",
-                        tags:["前端","技术","github"],
-                        src:"../articles/2016/10/18/article3.html"
-                    },
-                    {
-                        title:"这是一个标题46",
-                        sketch:"这里有一些简述,具体是什么：撒发顺丰和看杀害发空间和防守反击看风景爱好饭卡上会计法巴克斯把卡讲课费安康办发快爆发啊数据库地方",
-                        time:"2016/8/18",
-                        tags:["git","github"],
-                        src:"../articles/2016/10/18/article3.html"
+                        title:"设计模式初学",
+                        sketch:"Javascript设计模式入门读书笔记...",
+                        time:"2016/9/20",
+                        tags:["设计模式","技术"],
+                        src:"../articles/2016/9/20/design-mode-1.html"
                     }
                 ],
         methods : {
             composeArticle :　function($articles,title,sketch,time,src,tags){
                 var str = '';
                 var $article = $('<div class="article"></article>');
-                str = '<div class="title_wrapper"><h3 class="title">'+ title +'</h1></div>'
+                str = '<div class="title_wrapper"><h3 class="title"><a href="'+src+'" class="toArticle">'+ title +'</a></h1></div>'
                 var $title = $(str);
                 str = '<div class="crossline"></div><div class="sketch_wrapper">\
                         <p class="sketch">'+ sketch +'</p></div><div class="crossline"></div>';
@@ -80,8 +46,8 @@ define(function(){
                 var $time = $(str);
                 str = '<div class="tags_wrapper"></div>';
                 var $tags = $(str);
-                str = '<div class="link"><a href="'+src+'">阅读全文&gt;&gt;&gt;</a></div> <div class="clearfloat"></div>';
-                var $link = $(str);
+                // str = '<div class="link"><a href="'+src+'">阅读全文&gt;&gt;&gt;</a></div> <div class="clearfloat"></div>';
+                // var $link = $(str);
                 $.each(tags,function(i,n){
                     str = '<div class="tag_wrapper">\
                             <i class="iconfont">&#xe751</i>\
@@ -89,7 +55,7 @@ define(function(){
                     var $tag = $(str);
                     $tags.append($tag);
                 })
-                $article.append($title).append($sketch).append($time).append($tags).append($link);
+                $article.append($title).append($sketch).append($time).append($tags);
                 $articles.append($article);
             },
             composeTag : function($tag_wrapper,tags){
@@ -157,6 +123,6 @@ define(function(){
                 return atcArr;
             }
         },
-        tags : ['前端','技术','nodeJS','git','vue','github']
+        tags : ['前端','技术','nodeJS','git','vue','github','设计模式']
     };
 });

@@ -9,10 +9,33 @@
 </head>
 <body>
     <div class="main">
-        <div class="list">
-            <div class="articles" id="articles"></div>
+        <div class="contentTop">
+            <button type="button" id="goBack">返回</button>
+            <div class="br100"></div>
         </div>
-        <iframe src="" frameborder="no" id="content"></iframe>
+        <div class="contentBottom">
+            <div class="list" id="list">
+                <div class="articles" id="articles"></div>
+            </div>
+            <div class="content" id="contentWrapper">
+                <script type="text/javascript">
+                    function iFrameHeight() {
+                        try{
+                            var ifm = document.getElementById("content");
+                            var subWeb = document.frames ? document.frames["content"].document : ifm.contentDocument;
+                            if(ifm != null && subWeb != null) {
+                                ifm.height = subWeb.body.scrollHeight;
+                            }
+                        }catch(e){
+                            
+                        }
+                        
+                    }
+                </script>
+                <iframe src="" frameborder="no" id="content" name="content" onload="iFrameHeight()"></iframe>
+                 
+            </div>
+        </div>
     </div>
     <div class="sort">
         <div class="sort_head">
@@ -51,7 +74,7 @@
             </div>
         </div>
         <div class="chase_wrapper">
-                    <button type="button" id="chase">Chase the wrold!</button>
+                    <button type="button" id="chase">查找</button>
                     <button type="button" id="chaseAll">查看全部</button>
         </div>
     </div>
