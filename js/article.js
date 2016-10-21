@@ -73,7 +73,7 @@ $(document).ready(function(){
         })
     })
     //文章链接的渐进增强
-    $('.toArticle').click(function(e){
+    $(document).on('click','.toArticle',function(e){
         e.preventDefault();
         var src = e.target.href;
         $('#content').attr({src:src});
