@@ -16,6 +16,7 @@ define([
                 //由于获取图片高度、长度需要等图片加载完成，因此需要使用到Image对象的onload属性。
                 img.onload = function(){
                 // 加载完成 
+                    $('#load').removeClass('load');
                     var imgHeight = parseInt(img.height);
                     var imgWidth = parseInt(img.width);
                     if(imgHeight > containerHeight){
@@ -39,6 +40,7 @@ define([
                                 $(this).hide();
                                 $('body').css({overflow:'auto'});
                                 $('#modal').hide();
+                                $('#load').addClass('load');
                             });
             }
         })
