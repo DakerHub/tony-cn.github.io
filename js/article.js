@@ -70,6 +70,7 @@ $(document).ready(function(){
                 detail.methods.composeArticle($articles,item.title,item.sketch,item.time,item.src,item.tags);
             })
         }
+        $('#goBack').css({display:'none'});
         if($('#list').hasClass('hidden')){
             $('#contentWrapper').css({display:'none'});
             $('#contentTitle').css({display:'none'});
@@ -104,6 +105,7 @@ $(document).ready(function(){
         $.each(atcArr,function(index,item){
             detail.methods.composeArticle($articles,item.title,item.sketch,item.time,item.src,item.tags);
         })
+        $('#goBack').css({display:'none'});
         if($('#list').hasClass('hidden')){
             $('#contentWrapper').css({display:'none'});
             $('#contentTitle').css({display:'none'});
@@ -111,17 +113,18 @@ $(document).ready(function(){
         }
     })
     //文章链接的渐进增强
-    $(document).on('click','.toArticle',function(e){
-        var $this = $(this);
-        e.preventDefault();
-        var src = e.target.href;
+    $(document).on('click','a',function(e){e.preventDefault()}).on('click','.article',function(e){
+        var $title = $(this).find('.toArticle');
+        var src = $title.attr('href');
         $('#content').attr({src:src});
+        //样式的添加删除
         $('#contentWrapper').css({display:'block'}).addClass('show').removeClass('hidden');
         $('#goBack').css({display:'inline-block'});
-        $('#contentTitle').css({display:'block'}).find('h2').text($this.text());
+        $('#contentTitle').css({display:'block'}).find('h2').text($title.text());
         $('#list').css({display:'none'}).addClass('hidden').removeClass('show');
     });
     $('#goBack').click(function(e){
+        //样式的添加删除
         $(this).css({display:'none'});
         $('#contentTitle').css({display:'none'});
         $('#contentWrapper').css({display:'none'}).addClass('hidden').removeClass('show')

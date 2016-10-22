@@ -10,11 +10,13 @@ $(document).ready(function(){
     $.each(atcArr,function(index,item){
         detail.methods.composeArticle(articles,item.title,item.sketch,item.time,item.src,item.tags);
     });*/
-    $('.toArticle').click(function(e){
-        var $this = $(this);
+    $(document).on('click','a',function(e){
         e.preventDefault();
-        var ahref = e.target.href;
-        location.href = encodeURI('../articles/articles.html?'+'href='+ahref+'&title='+$this.text());
+    })
+    $('.article').click(function(e){
+        var $title = $(this).find('.toArticle');
+        var ahref = $title.attr('href');
+        location.href = encodeURI('../articles/articles.html?'+'href='+ahref+'&title='+$title.text());
         $('#home',window.parent.document).removeClass('currentView');
         $('#articles',window.parent.document).addClass('currentView');
         $('#header',window.parent.document).css({'width':'20%',transition:'width .5s'});

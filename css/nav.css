@@ -1,6 +1,7 @@
 
 body{
     overflow: hidden;
+    background-color: #676767;
 }
 .iconfont{
     margin:0 5px;
@@ -11,7 +12,7 @@ body{
     width:25%;
     height:100%;
     background-color: #2a2a2a;
-    -webkit-animation:'comein' 1s;
+    /*-webkit-animation:'comein' 1s;*/
 }
 @keyframes comein{
     from{
@@ -107,14 +108,16 @@ p,span,li,a,div{color:#fff}
     width:75%;
     height:100%;
     overflow:hidden;
-    -webkit-animation:'comein-r' 1s;
+    /*-webkit-animation:'comein-r' 1s;*/
 }
 @keyframes comein-r{
     from{
-        margin-right:-25%;
+        opacity:0.5;
+        transform:translateX(25%);
     }
     to{
-        margin-right:0;
+        opacity:1;
+        transform:translateX(0);
     }
 }
 #content{

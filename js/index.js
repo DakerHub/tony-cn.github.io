@@ -1,4 +1,8 @@
+
 require(['jquery'],function($){
+$(document).on('click','a',function(e){
+        e.preventDefault();
+})
 $(document).ready(function(){
     var $nav = $('#nav');
     $nav.on('click','li',function(e){
@@ -8,9 +12,7 @@ $(document).ready(function(){
             $this.addClass('currentView');
         }
     });
-    $('#nav a').click(function(e){
-        e.preventDefault();
-    })
+    
     $nav.on('click','.link',function(e){
         var src = $(this).find('a').attr('href');
         $('#content').attr({src:src});
