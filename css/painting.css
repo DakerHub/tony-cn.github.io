@@ -3,9 +3,12 @@ html{
     animation:'comein-r' 1s;
     -webkit-animation:'comein-r' 1s;
 }
+#gallery{
+    position:relative;
+}
 .gallery-year{
     width:90%;
-    margin:0 auto;
+    margin:0 0 0 50px;
 }
 .pic-wrapper{
     border-radius: 5px;
@@ -65,6 +68,23 @@ html{
     left: -160px;
     transition: left 0.8s;
     -webkit-transition: left 0.8s;
+}
+/*时间线*/
+.time-line{position: absolute;
+    display: block;
+    width: 5px;
+    height: 100%;
+    background-color: rgba(251,78,105,0.6);
+    border-radius: 2px;
+    left: 35px;
+}
+.time-line li{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(251,78,105,1);
+    border-radius: 50%;
+    margin-left: -8px;
 }
 
 /*模态框*/

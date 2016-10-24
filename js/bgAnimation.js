@@ -1,53 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <style>
-        .container{
-            position:relative;
-            width:800px;
-            height:600px;
-            margin:auto;
-            border: thin solid #ccc;
-        }
-        #canvas{
-            position:absolute;
-            left:0;
-            top:0;
-            z-index:-1;
-        }
-        .box1{
-            width:200px;
-            height:80px;
-            margin: 40px auto;
-            background-color:#ccc;
-            border-radius:10px;
-        }
-        .box2{
-            width:200px;
-            height:80px;
-            margin: 20px auto;
-            background-color:#ccc;
-            border-radius:10px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="box1" id="box1"></div>
-        <div class="box2" id="box2"></div>
-        <canvas id="canvas" width="800px" height="600px"></canvas>
-    </div>
-    <script src="../js/rAF.js"></script>
-    <script>
-        (function(){
+(function(){
             var canvas = document.getElementById('canvas');
             var box1 = document.getElementById('box1');
             var box2 = document.getElementById('box2');
             var ctx = canvas.getContext('2d');
             var ctxH = 600 ,ctxW = 800;
-
             //tool function
             function randomRange(min,max,dec){
                 return parseFloat(((max-min)*Math.random()+min).toFixed(dec || 2));
@@ -99,7 +55,6 @@
                     count : count
                 }
             }
-            
             //hover效果绘图对象
             function getHoverObj(){
                 var context = null,isEnter = false,isLeave=true,bubbles = [],colors = ['rgba(18,53,85,','rgba(209,73,78,','rgba(230,73,78,','rgba(219,208,167,','rgba(225,238,210,'];
@@ -262,6 +217,3 @@
                     }
             })()
         })()
-    </script>
-</body>
-</html>

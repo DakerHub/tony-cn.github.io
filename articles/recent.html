@@ -10,6 +10,12 @@
             animation:'comein-r' 1s;
             -webkit-animation:'comein-r' 1s;
         }
+        #canvas{
+            position:fixed;
+            left:0;
+            top:0;
+            z-index:-1;
+        }
     </style>
 </head>
 <body>
@@ -95,8 +101,8 @@
                 </div>
             </div>
         </div>
-        
-
+    </div>
+    <canvas id="canvas"></canvas>
     <script data-main="../js/recent" src="../js/require.js"></script>
 </body>
 </html>

@@ -10,9 +10,13 @@ a:hover{
 .iconfont{
     color:#666;
 }
+.articles{
+    padding-top: 20px;
+}
 .article{
     border-radius: 10px;
     width: 80%;
+    height:200px;
     margin: 20px auto;
     background-color: #fff;
     padding-bottom: 10px;
