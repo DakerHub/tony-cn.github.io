@@ -7,11 +7,15 @@ body{
     margin:0 5px;
 }
 .header{
+    position: relative;
     z-index:99;
     float:left;
     width:25%;
     height:100%;
-    background-color: #2a2a2a;
+    overflow: hidden;
+    /*background:linear-gradient(to top,#630202,#222);771a1a*/
+    /*background:linear-gradient(to top,#630202,#80808e)*/
+    background:linear-gradient(to top,#771a1a,#80808e)
     /*-webkit-animation:'comein' 1s;*/
 }
 @keyframes comein{
@@ -65,13 +69,30 @@ p,span,li,a,div{color:#fff}
     display: block;
     padding-top:2px;
     padding-bottom:2px;
-    padding-right:20px;
+    padding-right:30px;
+    transition: padding 0.5s;
+}
+.nav li:before{
+    content:'';
+    width:0;
+    transition: width 0.3s;
 }
 .nav li i{
     cursor: pointer;
 }
 .nav li:hover{
     background-color: #e41637;
+    padding-right:15px;
+    transition: padding 0.3s;
+}
+.nav li:hover:before{
+    content: '';
+    float: left;
+    height: 28px;
+    margin-top: -2px;
+    width:10px;
+    background-color: #9a0019;
+    transition: width 0.3s;
 }
 .currentView{
     background-color: #e41637;
@@ -126,3 +147,11 @@ p,span,li,a,div{color:#fff}
 }
 .iconfont{font-family:"iconfont";
 font-size:16px;font-style:normal;}
+/*动画*/
+.bgAnimation{
+      position:absolute;
+      left:0;
+      top:0;
+      z-index: -1;
+      /*background:linear-gradient(to top,#630202,#222);*/
+ }

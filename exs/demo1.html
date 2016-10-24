@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .container{
+      width:80%;
+      height:600px;
+      margin:0 auto;
+      position:relative;
+      border:thin solid #ccc;
+    }
+    .bgAnimation{
+      position:absolute;
+      left:0;
+      background:linear-gradient(to top,#630202,#000);
+    }
+    .font{
+      width:100px;
+      height:100px;
+      background-color:#ccc;
+    }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="font">前景</div>
+        <canvas id="bgAnimation" class="bgAnimation" ></canvas>
+    </div>
+    <script>
+        var canvas = document.getElementById('bgAnimation');
+        var ctx = canvas.getContext('2d');
+        var bubbles = [];
+        canvas.height = 600;
+        canvas.width = 200;
+        /*
+        {
+          x : ,
+          y : ,
+          r : ,
+          v : ,
+          color :　,
+          opacity :　
+        }
+        */
+        function randomRange(min,max,dec){
+            return parseFloat(((max-min)*Math.random()+min).toFixed(dec || 2));
+        }        
+        function drawArc(){
+                ctx.clearRect(0,0,200,600);
+                for(let i = 0;i<bubbles.length;i++){
+                    var bubble = bubbles[i];
+                    if(bubble.y > 400){
+                        var color = bubble.color;
+                        var temp = color.slice(0,color.lastIndexOf(',')+1);
+                        color = temp + bubble.opacity + ')';
+                        ctx.fillStyle = color;
+                        ctx.beginPath();
+                        ctx.arc(bubble.x,bubble.y,bubble.r,0,Math.PI*2,true);
+                        ctx.fill();
+                        bubble.y = bubble.y + bubble.v;
+                        bubble.r = bubble.r < 2 ? 2 : bubble.r*randomRange(0.98,0.998,3);
+                        bubble.opacity = bubble.opacity*0.98;
+                  }else{
+                        bubbles.splice(i,1);
+                  }
+                }
+                console.log(bubbles.length);
+        }
+        function creatArc(){
+            var count = randomRange(0,10,0)
+            for(let i = 0;i < count;i++){
+                bubbles.push({
+                    x : randomRange(0,200,0),
+                    y : 610,
+                    r : randomRange(2,12),
+                    v : randomRange(-1.2,-0.3,3),
+                    color :　'rgba(200,200,200,1)',
+                    opacity : randomRange(0.8,1)
+                });
+            }
+        }
+        setInterval(creatArc,500);
+        setInterval(drawArc,50);
+    </script>
+</body>
+</html>

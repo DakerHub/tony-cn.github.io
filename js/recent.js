@@ -1,4 +1,7 @@
 require(['detail','jquery'], function(detail,$){  
+$(document).on('click','a',function(e){
+        e.preventDefault();
+})
 $(document).ready(function(){
     /*
     //由于js解析加载首页的方法用在移动端十分吃力，所以手动添加最近的4篇博文
@@ -10,9 +13,7 @@ $(document).ready(function(){
     $.each(atcArr,function(index,item){
         detail.methods.composeArticle(articles,item.title,item.sketch,item.time,item.src,item.tags);
     });*/
-    $(document).on('click','a',function(e){
-        e.preventDefault();
-    })
+    
     $('.article').click(function(e){
         var $title = $(this).find('.toArticle');
         var ahref = $title.attr('href');

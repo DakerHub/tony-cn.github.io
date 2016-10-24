@@ -1,5 +1,5 @@
 html{
-    background-color: #ddddf5;
+    background-color: #f5f2dd;
 }
 a,h1,h2,h3,h4,h5,h6,div,span,p,i{
     color:#676767;
@@ -19,7 +19,7 @@ a:hover{
     padding-top: 10px;
 }
 .article:hover{
-    box-shadow: 0px 0px 3px 2px #aaa;
+    box-shadow: 0px 0px 3px 2px #dad29e;
 }
 .article:hover .toArticle{
     color:#333;

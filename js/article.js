@@ -1,4 +1,5 @@
-require(['detail','jquery'], function(detail,$){  
+require(['detail','jquery'], function(detail,$){
+$(document).on('click','a',function(e){e.preventDefault()}); 
 $(document).ready(function(){
     // 初始化页面
     var search = location.search;
@@ -113,7 +114,7 @@ $(document).ready(function(){
         }
     })
     //文章链接的渐进增强
-    $(document).on('click','a',function(e){e.preventDefault()}).on('click','.article',function(e){
+    $(document).on('click','.article',function(e){
         var $title = $(this).find('.toArticle');
         var src = $title.attr('href');
         $('#content').attr({src:src});
