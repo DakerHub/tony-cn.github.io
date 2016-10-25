@@ -24,6 +24,8 @@ a:hover{
 }
 .article:hover{
     box-shadow: 0px 0px 3px 2px #dad29e;
+    border-color: rgb(241, 106, 106);
+    transition:border-color 0.5s;
 }
 .article:hover .toArticle{
     color:#333;

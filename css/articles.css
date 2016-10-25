@@ -46,7 +46,10 @@ html{
     float:left;
 }
 .article{
-        border: thin solid #ccc;
+    border-style: dashed;
+    border-width: 5px;
+    border-color: #ccc;
+    transition:border-color 0.5s;
 }
 .tag-list-wrapper{
     display: inline-block;

@@ -56,13 +56,15 @@ define([
         years.each(function(){
             offsetArr.push($(this).offset().top);
         });
-        console.log(offsetArr);
         var timeLine = $('<ul class="time-line"></ul>');
         for(let i=0;i<offsetArr.length;i++){
             timeLine.append($('<li style="margin-top:'+(offsetArr[i]-(offsetArr[i-1]?offsetArr[i-1]+20:offsetArr[i]))+'px"></li>'));
         }
         $('#gallery').prepend(timeLine);
-        
+        setTimeout(slide,300);
+        function slide(){
+            timeLine.slideDown()
+        }
         // 背景canvas动画
             var canvas = document.getElementById('canvas');
             var ctx = canvas.getContext('2d');

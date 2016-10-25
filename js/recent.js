@@ -135,18 +135,18 @@ $(document).ready(function(){
                         var rightNum = randomRange(3,6,0);
                         for(let i=0;i<leftNum;i++){
                             bubbles.push({
-                                x : randomRange(l_right-60,l_right),
+                                x : randomRange(l_right-70,l_right-10),
                                 y : randomRange(top,top + height),
-                                r : randomRange(1,3),
+                                r : randomRange(3,8),
                                 v : randomRange(0.6,0.8),
                                 color : colors[Math.floor(Math.random()*colors.length)]+randomRange(0.5,1)+')' 
                             })
                         }
                         for(let i=0;i<rightNum;i++){
                             bubbles.push({
-                                x : randomRange(l_right+width,l_right+width+60),
+                                x : randomRange(l_right+width+10,l_right+width+70),
                                 y : randomRange(top,top + height),
-                                r : randomRange(1,3),
+                                r : randomRange(3,8),
                                 v : randomRange(0.6,0.8),
                                 color : colors[Math.floor(Math.random()*colors.length)]+randomRange(0.5,1)+')' 
                             })
